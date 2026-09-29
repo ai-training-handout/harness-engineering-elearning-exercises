@@ -74,8 +74,8 @@
 | `CLAUDE.md` | **雛形（空欄あり）**。「スタックと構成」は埋めてある | Step 1 でコーディング規約と Do NOT を埋める |
 | `.claude/settings.json` | allow / deny が空の雛形 | Step 2 で書く。Step 3・7 で Hook を登録 |
 | `.claude/permissions-snippet.json` | Step 2 で貼る allow の一覧（pytest・ruff・uv・git・E2E スクリプト・Playwright MCP のツール） | Step 2 で貼り、中身を説明できるようにする |
-| `.env` | Step 2 の deny 体験用のダミー（偽の値） | Step 2 で読ませて、止まるのを見る |
-| `.gitignore` | 仮想環境・キャッシュ・Playwright MCP の作業フォルダ（`.playwright-mcp/`）を Git に入れない | Step 0 の最初のコミットの前から置いてある |
+| `.env.example` | 環境変数の見本（値はダミー） | — |
+| `.gitignore` | `.env`・仮想環境・キャッシュ・Playwright MCP の作業フォルダ（`.playwright-mcp/`）を Git に入れない | Step 0 の最初のコミットの前から置いてある |
 | `.claude/hooks-settings-snippet.json` | Hook 登録の書き方（settings.json に貼る断片） | Step 3・7 で参照 |
 | `.claude/hooks/format.sh` | PostToolUse Hook（整形） | Step 3 で登録 |
 | `.claude/hooks/stop_report.sh` | Stop Hook（完了通知とトークン集計） | Step 7 で登録 |
