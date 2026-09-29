@@ -1,0 +1,26 @@
+{
+  "_説明": "Step 3（PostToolUse）と Step 7（Stop）で、この hooks オブジェクトを .claude/settings.json の \"hooks\" に貼る。Step 3 の時点では PostToolUse だけを貼り、Step 7 で Stop を足す。",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/format.sh\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/stop_report.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "_説明": "第3部4章 #133 の演習用。この hooks オブジェクトを、自分のプロジェクトの .claude/settings.json の \"hooks\" に貼る（settings.json が無ければ、このファイルから _説明 の行を消して .claude/settings.json として置く）。スクリプトは .claude/hooks/ に置き、実行権限を付ける。",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/format.sh\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR/.claude/hooks/block_dangerous.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
